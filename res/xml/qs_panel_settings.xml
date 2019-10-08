@@ -30,6 +30,12 @@
         android:max="100"
         android:min="1" />
 
+    <Preference
+        android:key="qs_header_image"
+        android:title="@string/qs_header_image_title"
+        android:summary="@string/qs_header_image_summary"
+        android:fragment="com.android.settings.derp.statusbar.QsHeaderImageSettings" />
+
     <org.derpfest.support.preferences.SystemSettingSwitchPreference
         android:key="qs_show_battery_estimate"
         android:title="@string/qs_show_battery_estimate_title"
