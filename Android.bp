@@ -47,8 +47,12 @@ java_defaults {
         "framework-derpfest",
     ],
     static_libs: [
-        "VendorSupport-preference",
+        "androidx.fragment_fragment",
+        "androidx.fragment_fragment-ktx",
+        "androidx.preference_preference-ktx",
+        "kotlinx_coroutines_android",
         "SystemUISharedLib",
+        "VendorSupport-preference",
         "vendor.lineage.fastcharge-V1.0-java",
     ],
 }
