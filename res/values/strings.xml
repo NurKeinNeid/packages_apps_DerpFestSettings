@@ -695,4 +695,9 @@
     <string name="transient_task_mode_default">Disable (Default)</string>
     <string name="transient_task_mode_allow">Enable (Some apps will stay)</string>
     <string name="transient_task_mode_force">Force (Override app behaviour)</string>
+
+    <!-- Per-app volume control -->
+    <string name="app_volume">App volume</string>
+    <string name="app_volume_title">Per-app volume control</string>
+    <string name="app_volume_summary">Allow to set different volume levels for each app</string>
 </resources>
