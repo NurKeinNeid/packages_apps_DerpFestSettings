@@ -1,0 +1,16 @@
+# Copyright (C) 2021 StatiXOS
+# SPDX-License-Identifier: Apache-2.0
+
+-include ../../../../packages/apps/Settings/proguard.flags
+
+-keep class com.android.settings.** { *; }
+-keep class vendor.** { *; }
+-keep class com.android.wsuinterface.** { *; }
+-keep class com.google.** { *; }
+
+# For reflection
+-keepattributes InnerClasses
+-keep class **.R
+-keep class **.R$* {
+    <fields>;
+}
