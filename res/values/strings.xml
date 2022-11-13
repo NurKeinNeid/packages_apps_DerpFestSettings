@@ -24,6 +24,7 @@
     <!-- Adaptive charging -->
     <string name="adaptive_charging">Adaptive Charging</string>
     <string name="adaptive_charging_description">Extend battery lifespan by charging steadily during longer charging periods. Activated based on your usage cycle.</string>
+    <string name="adaptive_charging_time_estimate">Adaptive charging • Full by %1$s</string>
     <string name="keywords_adaptive_charging">charge, charging, smart charging, adaptive charging, battery, battery health</string>
 
     <string name="app_lock_authentication_dialog_title">Unlock</string>
