@@ -20,6 +20,16 @@
     android:key="qs_panel_options"
     android:title="@string/qs_panel_options_title">
 
+    <org.derpfest.support.preferences.CustomSystemSeekBarPreference
+        android:key="qs_transparency"
+        android:title="@string/qs_transparency_title"
+        android:summary="@string/qs_transparency_summary"
+        android:defaultValue="@*android:integer/config_qs_transparency"
+        settings:interval="1"
+        settings:units="%"
+        android:max="100"
+        android:min="1" />
+
     <org.derpfest.support.preferences.SystemSettingSwitchPreference
         android:key="qs_show_battery_estimate"
         android:title="@string/qs_show_battery_estimate_title"

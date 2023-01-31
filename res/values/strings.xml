@@ -672,4 +672,8 @@
     <string name="incall_vibrate_connect_title">Vibrate on connect</string>
     <string name="incall_vibrate_call_wait_title">Vibrate on call waiting</string>
     <string name="incall_vibrate_disconnect_title">Vibrate on disconnect</string>
+
+    <!-- QS Transparency -->
+    <string name="qs_transparency_title">Background opacity</string>
+    <string name="qs_transparency_summary">Set opacity level for QS background</string>
 </resources>
