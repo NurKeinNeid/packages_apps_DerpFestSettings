@@ -743,4 +743,9 @@
     <string name="battery_maximum_capacity">Maximum capacity</string>
     <string name="battery_maximum_capacity_summary">%1$d mAh (%2$d%%)</string>
     <string name="battery_maximum_capacity_not_available" translatable="false">@string/battery_cycle_count_not_available</string>
+
+    <!-- Navbar -->
+    <string name="navbar_tuner_title">Navbar tuner</string>
+    <string name="navbar_tuner_summary">Customize your navbar layout</string>
+
 </resources>
