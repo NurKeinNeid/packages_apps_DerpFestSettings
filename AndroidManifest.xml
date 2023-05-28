@@ -85,6 +85,17 @@
                 android:value="true" />
         </activity>
 
+        <!-- Clear calling -->
+        <activity android:name="com.android.settings.notification.ClearCallingSettingsActivity"
+                  android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.settings.notification.CLEAR_CALLING"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:value="com.android.settings.notification.ClearCallingSettings"
+                       android:name="com.android.settings.FRAGMENT_CLASS"/>
+        </activity>
+
     </application>
 
 </manifest>

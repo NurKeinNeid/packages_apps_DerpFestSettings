@@ -840,4 +840,11 @@
     <string name="camera_action_summary">@string/camera_corner_gesture_summary</string>
     <string name="screenshot_action_title">Take a screenshot</string>
     <string name="screenshot_action_summary">@string/screenshot_corner_gesture_summary</string>
+
+    <!-- Clear calling -->
+    <string name="clear_calling_footer">To protect your privacy, Clear Calling never sends audio or conversations to Google. Clear Calling is available depending on your Wi‑Fi and mobile network.</string>
+    <string name="clear_calling_footer_learn_more_link">https://support.google.com/pixelphone?p=clear_calling</string>
+    <string name="clear_calling_title">Clear Calling</string>
+    <string name="clear_calling_toggle">Use Clear Calling</string>
+    <string name="clear_calling_topintro">Reduces background noises during calls</string>
 </resources>
