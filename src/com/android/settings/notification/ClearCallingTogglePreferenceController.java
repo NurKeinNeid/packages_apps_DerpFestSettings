@@ -1,7 +1,6 @@
 package com.android.settings.notification;
 
 import android.content.Context;
-import android.content.IntentFilter;
 import android.media.AudioManager;
 
 import com.android.settings.R;
