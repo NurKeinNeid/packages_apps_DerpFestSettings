@@ -47,4 +47,7 @@
 
     <!-- Default min refresh rate -->
     <integer name="default_min_refresh_rate" translatable="false">60</integer>
+
+    <!-- Whether nfc detection point preview image is available or not. -->
+    <bool name="config_nfc_detection_point">true</bool>
 </resources>
