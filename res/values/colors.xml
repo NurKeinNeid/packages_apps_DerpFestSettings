@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright 2022 The dotOS Project
+     Copyright (C) 2023 The LibreMobileOS Foundation
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -21,4 +22,9 @@
      <color name="derp_background1">@android:color/system_neutral1_50</color>
      <color name="derp_background2">@android:color/system_neutral1_100</color>
      <color name="derp_background3">@android:color/system_accent1_400</color>
+
+    <!-- Ambient edge light -->
+    <color name="ambient_edge_light_color_selector_item_outer_bg_color">@android:color/white</color>
+    <color name="ambient_edge_light_color_selector_selected_icon_tint_color">#AA000000</color>
+
 </resources>
