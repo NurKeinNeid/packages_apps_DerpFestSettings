@@ -36,4 +36,6 @@
     <!-- Whether to show Ambient Edge Light feature in Settings Options -->
     <bool name="config_show_ambient_edge_light">true</bool>
 
+    <!-- Whether to show Assisted GPS switch in Locations settings -->
+    <bool name="config_show_assisted_gps_switch">true</bool>
 </resources>
