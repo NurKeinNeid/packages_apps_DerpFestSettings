@@ -50,4 +50,19 @@
 
     <!-- Whether nfc detection point preview image is available or not. -->
     <bool name="config_nfc_detection_point">true</bool>
+
+    <!-- BT Slice intent action. -->
+    <string name="config_bt_slice_intent_action">com.google.android.gms.nearby.discovery.ACTION_LOG_SLICE_AND_LAUNCH_INTENT</string>
+    <!-- BT Slice pending intent action. -->
+    <string name="config_bt_slice_pending_intent_action">com.google.android.gms.nearby.discovery.ACTION_LOG_SLICE_AND_SEND_PENDING_INTENT</string>
+    <!-- BT Slice EXTRA_INTENT. -->
+    <string name="config_bt_slice_extra_intent">com.google.android.gms.nearby.discovery.EXTRA_INTENT</string>
+    <!-- BT Slice EXTRA_PENDING_INTENT. -->
+    <string name="config_bt_slice_extra_pending_intent">com.google.android.gms.nearby.discovery.EXTRA_PENDING_INTENT</string>
+
+    <!-- Authority of advanced device battery prediction -->
+    <string name="config_battery_prediction_authority">com.google.android.apps.turbo.bluetooth.estimated_time_remaining</string>
+
+    <!-- Bluetooth device settings -->
+    <string name="config_bluetooth_device_settings_uri">content://com.google.android.apps.wearables.maestro.companion/settings_slice?addr=%1$s</string>
 </resources>
