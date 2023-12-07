@@ -48,5 +48,6 @@ java_defaults {
     ],
     static_libs: [
         "VendorSupport-preference",
+        "SystemUISharedLib",
     ],
 }
