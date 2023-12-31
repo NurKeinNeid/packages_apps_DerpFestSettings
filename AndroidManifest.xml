@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2023 The LibreMobileOS Foundation
+     SPDX-FileCopyrightText: 2024 DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.android.settings">
+
+    <application>
+
+    </application>
+
+</manifest>

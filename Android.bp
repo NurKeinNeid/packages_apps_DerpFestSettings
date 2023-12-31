@@ -1,0 +1,49 @@
+//
+// SPDX-FileCopyrightText: 2023 The LibreMobileOS Foundation
+// SPDX-FileCopyrightText: 2024 DerpFest AOSP
+// SPDX-License-Identifier: Apache-2.0
+//
+
+filegroup {
+    name: "DerpFestSettings-sources",
+    srcs: [
+        "src/**/*.java",
+        "src/**/*.kt",
+    ],
+
+    visibility: ["//packages/apps/Settings"],
+}
+
+genrule {
+   name: "DerpFestSettings-res",
+   tools: ["soong_zip"],
+   srcs: [
+       "res/**/*"
+   ],
+   out: ["DerpFestSettings-res.zip"],
+   cmd: "INPUTS=($(in)) && "
+       + "RES_DIR=$$(dirname $$(dirname $${INPUTS[0]})) && "
+       + "$(location soong_zip) -o $(out) -C $$RES_DIR -D $$RES_DIR"
+}
+
+filegroup {
+    name: "DerpFestSettings-manifest",
+    srcs: [
+        "AndroidManifest.xml",
+    ],
+}
+
+java_defaults {
+    name: "DerpFestSettings-defaults",
+
+    srcs: [":DerpFestSettings-sources"],
+    resource_zips: [":DerpFestSettings-res"],
+    additional_manifests: [":DerpFestSettings-manifest"],
+
+    libs: [
+        "framework-derpfest",
+    ],
+    static_libs: [
+        "VendorSupport-preference",
+    ],
+}
