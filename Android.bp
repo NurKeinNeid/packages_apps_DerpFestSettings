@@ -36,9 +36,12 @@ filegroup {
 java_defaults {
     name: "DerpFestSettings-defaults",
 
-    srcs: [":DerpFestSettings-sources"],
-    resource_zips: [":DerpFestSettings-res"],
     additional_manifests: [":DerpFestSettings-manifest"],
+    srcs: [":DerpFestSettings-sources"],
+    resource_zips: [
+        ":DerpFestSettings-res",
+        ":TouchGestures-res",
+    ],
 
     libs: [
         "framework-derpfest",
