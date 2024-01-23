@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019 The LineageOS Project
+     Copyright 2022 The dotOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,16 +14,11 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
 <resources>
-     <!-- Dashboard dimens -->
-     <dimen name="derp_radius">28dp</dimen>
-     <dimen name="derp_radius_merge">5dp</dimen>
-     <dimen name="derp_pref_horizontal_padding">16dp</dimen>
-     <dimen name="derp_pref_horizontal_padding-negative">-16dp</dimen>
-
-    <!-- Fingerprint -->
-    <dimen name="fingerprint_find_sensor_padding_top">16dp</dimen>
-
-    <dimen name="package_list_padding_top">16dp</dimen>
+     <color name="derp_pref_ripple">#1f000000</color>
+     <color name="derp_pref_color">@android:color/system_neutral1_10</color>
+     <color name="derp_pref_opaque">#33FFFFFF</color>
+     <color name="derp_background1">@android:color/system_neutral1_50</color>
+     <color name="derp_background2">@android:color/system_neutral1_100</color>
+     <color name="derp_background3">@android:color/system_accent1_400</color>
 </resources>

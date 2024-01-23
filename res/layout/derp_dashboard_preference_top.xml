@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019 The LineageOS Project
+     Copyright 2021 xdroid, xyzprjkt
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,16 +14,15 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    style="@style/derpDashboardPreferenceTop"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-<resources>
-     <!-- Dashboard dimens -->
-     <dimen name="derp_radius">28dp</dimen>
-     <dimen name="derp_radius_merge">5dp</dimen>
-     <dimen name="derp_pref_horizontal_padding">16dp</dimen>
-     <dimen name="derp_pref_horizontal_padding-negative">-16dp</dimen>
+    <include
+        layout="@layout/derp_dashboard_pref"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-    <!-- Fingerprint -->
-    <dimen name="fingerprint_find_sensor_padding_top">16dp</dimen>
-
-    <dimen name="package_list_padding_top">16dp</dimen>
-</resources>
+</FrameLayout>
