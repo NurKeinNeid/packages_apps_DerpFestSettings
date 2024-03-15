@@ -38,4 +38,7 @@
 
     <!-- Whether to show Assisted GPS switch in Locations settings -->
     <bool name="config_show_assisted_gps_switch">true</bool>
+
+    <!-- Show battery information -->
+    <bool name="config_show_battery_info" translatable="false">true</bool>
 </resources>
