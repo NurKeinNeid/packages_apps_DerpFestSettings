@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2022 FlamingoOS Project
+ * Copyright (C) 2024 The LibreMobileOS Foundation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -119,7 +120,7 @@ class AppLockSettingsPreferenceController(
             val title = mContext.getString(R.string.app_lock_authentication_dialog_title)
             val intent = Intent().apply {
                 setClassName(SETTINGS_PACKAGE_NAME,
-                        ConfirmDeviceCredentialActivity::class.qualifiedName)
+                        ConfirmDeviceCredentialActivity::class.qualifiedName!!)
                 putExtra(KeyguardManager.EXTRA_TITLE, title)
             }
             securityPromptLauncher.launch(intent)
