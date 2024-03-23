@@ -36,4 +36,6 @@
     <dimen name="ambient_edge_light_color_selector_item_padding">4dp</dimen>
     <dimen name="ambient_edge_light_color_selector_view_padding_horizontal">24dp</dimen>
 
+    <!-- Notification light -->
+    <dimen name="oval_notification_size">26dp</dimen>
 </resources>
