@@ -54,6 +54,5 @@ java_defaults {
         "SystemUISharedLib",
         "VendorSupport-preference",
         "vendor.lineage.fastcharge-V1.0-java",
-        "vendor.lineage.trust-V1.0-java",
     ],
 }
