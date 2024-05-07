@@ -155,6 +155,12 @@
     <string name="power_menu_advanced_restart_title">Advanced restart</string>
     <string name="power_menu_advanced_restart_summary">When unlocked, include options in the power menu for restarting into recovery or bootloader</string>
     <string name="power_menu_emergency_affordance_enabled">Emergency affordance is enabled</string>
+    <string name="power_menu_type_title">Power menu style</string>
+    <string name="power_menu_type_lite">Lite (A12)</string>
+    <string name="power_menu_type_full">Full (A11)</string>
+    <string name="power_menu_type_classic">Classic (A8)</string>
+    <string name="power_menu_type_grid">Grid</string>
+    <string name="power_menu_type_legacy">Legacy (A7)</string>
     <!-- Text shown for the title of the panic option -->
     <string name="power_menu_panic_title">Panic trigger</string>
     <!-- Text shown for the description of the panic option -->
