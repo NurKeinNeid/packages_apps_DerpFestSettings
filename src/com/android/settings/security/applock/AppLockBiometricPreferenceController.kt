@@ -19,7 +19,7 @@ package com.android.settings.security.applock
 
 import android.content.Context
 import android.hardware.biometrics.BiometricManager
-import android.hardware.biometrics.BiometricManager.Authenticators.BIOMETRIC_STRONG
+import android.hardware.biometrics.BiometricManager.Authenticators.BIOMETRIC_WEAK
 
 import androidx.preference.Preference
 import androidx.preference.PreferenceScreen
@@ -56,7 +56,7 @@ class AppLockBiometricPreferenceController(
     }
 
     override fun getAvailabilityStatus(): Int {
-        val result = biometricManager?.canAuthenticate(BIOMETRIC_STRONG)
+        val result = biometricManager?.canAuthenticate(BIOMETRIC_WEAK)
         return if (result == BiometricManager.BIOMETRIC_SUCCESS) AVAILABLE else CONDITIONALLY_UNAVAILABLE
     }
 
