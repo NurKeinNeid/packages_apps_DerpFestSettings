@@ -764,4 +764,8 @@
 
     <!-- Running services - Background processes tab -->
     <string name="background_processes_settings_title">Background processes</string>
+
+    <!-- Force ongoing notifications to be non dismissible -->
+    <string name="notification_force_non_dismissible_title">Force ongoing notifications to be non-dismissible</string>
+    <string name="notification_force_non_dismissible_summary">This prevents you to swipe away notifications that cannot be cleared by "clear all". Useful if you tend to accidentally swipe those notifications away.</string>
 </resources>
