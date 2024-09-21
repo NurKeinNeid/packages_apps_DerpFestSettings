@@ -182,7 +182,8 @@ class AppLockCredentialActivity : FragmentActivity() {
             as? BiometricFragment
         var newFragment = false
         if (biometricFragment == null) {
-            biometricFragment = BiometricFragment.newInstance(promptInfo)
+            biometricFragment = BiometricFragment.newInstance(promptInfo,
+                    getCallingActivity())
             newFragment = true
         }
         biometricFragment?.also {
