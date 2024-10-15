@@ -783,4 +783,9 @@
     <!-- Less boring heads up -->
     <string name="less_boring_heads_up_title">Less boring</string>
     <string name="less_boring_heads_up_summary">Display popup notifications only for alarm, dialer and messaging app</string>
+
+    <!-- Factory reset battery low dialog -->
+    <string name="factory_reset_battery_low_dialog_title">Akku fast leer</string>
+    <string name="factory_reset_battery_low_dialog_message">Um einen Werksreset durchführen zu können, muss der Akkustand mindestens 15 % betragen.\n\nBitte schließen Sie Ihr Ladegerät an, um fortzufahren.</string>
+    <string name="factory_reset_battery_low_dialog_button_text">Verstanden</string>
 </resources>
