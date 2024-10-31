@@ -832,9 +832,12 @@
     <string name="customize_corner_swipe_gesture">Customize corner swipe gesture</string>
     <string name="enable_corner_swipe_preference_title">Corner swipe options</string>
     <string name="enable_corner_swipe_title">Enable corner swipe</string>
+    <string name="camera_corner_gesture_summary">Swipe up from a bottom corner to open camera</string>
     <string name="screenshot_corner_gesture_summary">Swipe up from a bottom corner to take a screenshot</string>
     <string name="assistant_action_title">Invoke digital assistant</string>
     <string name="assistant_action_summary">@string/assistant_corner_gesture_summary</string>
+    <string name="camera_action_title">Open camera</string>
+    <string name="camera_action_summary">@string/camera_corner_gesture_summary</string>
     <string name="screenshot_action_title">Take a screenshot</string>
     <string name="screenshot_action_summary">@string/screenshot_corner_gesture_summary</string>
 </resources>

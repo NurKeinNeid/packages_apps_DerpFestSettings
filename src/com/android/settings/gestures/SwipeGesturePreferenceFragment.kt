@@ -33,6 +33,7 @@ class SwipeGesturePreferenceFragment : RadioButtonPickerFragment() {
     when (selectedKey) {
       KEY_ASSIST_ACTION -> Settings.Secure.putInt(contentResolver, SETTING_ASSIST_ACTION, -1)
       KEY_SCREENSHOT_ACTION -> Settings.Secure.putInt(contentResolver, SETTING_ASSIST_ACTION, 0)
+      KEY_CAMERA_ACTION -> Settings.Secure.putInt(contentResolver, SETTING_ASSIST_ACTION, 1)
       else -> {}
     }
   }
@@ -52,6 +53,12 @@ class SwipeGesturePreferenceFragment : RadioButtonPickerFragment() {
         KEY_SCREENSHOT_ACTION,
         /* enabled= */ true,
       ),
+      CandidateInfoExtra(
+        resources.getText(R.string.camera_action_title),
+        resources.getText(R.string.camera_action_summary),
+        KEY_CAMERA_ACTION,
+        /* enabled= */ true,
+      ),
     )
   }
 
@@ -59,6 +66,7 @@ class SwipeGesturePreferenceFragment : RadioButtonPickerFragment() {
     val contentResolver = context!!.contentResolver
     return when (Settings.Secure.getInt(contentResolver, SETTING_ASSIST_ACTION, -1)) {
       0 -> KEY_SCREENSHOT_ACTION
+      1 -> KEY_CAMERA_ACTION
       else -> KEY_ASSIST_ACTION
     }
   }
@@ -67,6 +75,7 @@ class SwipeGesturePreferenceFragment : RadioButtonPickerFragment() {
     val contentResolver = context!!.contentResolver
     when (key) {
       KEY_SCREENSHOT_ACTION -> Settings.Secure.putInt(contentResolver, SETTING_ASSIST_ACTION, 0)
+      KEY_CAMERA_ACTION -> Settings.Secure.putInt(contentResolver, SETTING_ASSIST_ACTION, 1)
       else -> Settings.Secure.putInt(contentResolver, SETTING_ASSIST_ACTION, -1)
     }
     return true
@@ -124,6 +133,7 @@ class SwipeGesturePreferenceFragment : RadioButtonPickerFragment() {
   companion object {
     private const val SETTING_ASSIST_ACTION = "assist_action"
     private const val KEY_ASSIST_ACTION = "assistant"
+    private const val KEY_CAMERA_ACTION = "camera"
     private const val KEY_SCREENSHOT_ACTION = "screenshot"
   }
 }
