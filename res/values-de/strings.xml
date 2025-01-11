@@ -809,4 +809,14 @@
     <string name="enable">Aktivieren</string>
     <string name="qs_header_offset_title">Zoomfaktor des Kopfzeilenbilds</string>
     <string name="qs_header_offset_summary">Größe des Kopfzeilenbilds anpassen</string>
+
+    <!-- Assist gesture customization -->
+    <string name="customize_corner_swipe_gesture">Anpassen der Wischgeste in den Ecken</string>
+    <string name="enable_corner_swipe_preference_title">Optionen zum Wischen in der Ecke</string>
+    <string name="enable_corner_swipe_title">Wischen in der Ecke aktivieren</string>
+    <string name="screenshot_corner_gesture_summary">Wische von einer unteren Ecke nach oben, um einen Screenshot zu erstellen</string>
+    <string name="assistant_action_title">Aufrufen des digitalen Assistenten</string>
+    <string name="assistant_action_summary">@string/assistant_corner_gesture_summary</string>
+    <string name="screenshot_action_title">Screenshot erstellen</string>
+    <string name="screenshot_action_summary">@string/screenshot_corner_gesture_summary</string>
 </resources>

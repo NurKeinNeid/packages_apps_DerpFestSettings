@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (C) 2019 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License
+  -->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:key="gesture_navigation_settings_page"
+    android:title="@string/edge_to_edge_navigation_title"
+    settings:keywords="@string/keywords_gesture_navigation_settings">
+
+    <PreferenceCategory
+        android:key="navigation_bar_hint"
+        android:title="@string/navbar_category">
+
+        <org.derpfest.support.preferences.SecureSettingSwitchPreference
+            android:key="navigation_bar_hint"
+            android:title="@string/hide_navbar_gesture_bar_title"
+            android:summary="@string/hide_navbar_gesture_bar_summary"
+            android:defaultValue="false" />
+
+        <org.derpfest.support.preferences.SecureSettingSwitchPreference
+            android:key="keyboard_no_navigation_bar"
+            android:title="@string/keyboard_no_navigation_title"
+            android:summary="@string/keyboard_no_navigation_summary"
+            android:defaultValue="false"
+            android:dependency="navigation_bar_hint" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="assistant_gesture_category"
+        android:persistent="false"
+        android:title="@string/assistant_gesture_category_title">
+
+        <com.android.settingslib.PrimarySwitchPreference
+            android:fragment="com.android.settings.gestures.SwipeGesturePreferenceFragment"
+            android:key="swipe_gesture_picker"
+            android:title="@string/enable_corner_swipe_preference_title"
+            settings:controller="com.android.settings.gestures.SwipeGesturePreferenceController" />
+
+        <SwitchPreferenceCompat
+            android:key="navbar_long_press_gesture"
+            android:title="@string/navbar_long_press_gesture_title"
+            android:summary="@string/navbar_long_press_gesture_summary"
+            settings:controller="com.android.settings.gestures.GestureNavigationLongPressController" />
+
+        <SwitchPreferenceCompat
+            android:key="search_all_entrypoints_enabled"
+            android:title="@string/search_all_entrypoints_enabled_title"
+            android:summary="@string/search_all_entrypoints_enabled_summary"
+            settings:controller="com.android.settings.gestures.GestureNavigationCtsController" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/navbar_gesture_handle_category">
+
+        <org.derpfest.support.preferences.SystemSettingSwitchPreference
+            android:key="back_gesture_haptic"
+            android:title="@string/back_gesture_haptic_title"
+            android:summary="@string/back_gesture_haptic_summary"
+            android:defaultValue="false" />
+
+        <org.derpfest.support.preferences.SecureSettingSwitchPreference
+            android:key="back_gesture_arrow"
+            android:title="@string/back_gesture_arrow_title"
+            android:summary="@string/back_gesture_arrow_summary"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/back_height_category">
+
+        <com.android.settings.widget.LabeledSeekBarPreference
+            android:key="gesture_back_height"
+            android:title="@string/back_height_title"
+            android:summary="@string/back_height_message"
+            android:max="5"
+            android:selectable="true"
+            settings:textStart="@string/back_height_low_label"
+            settings:textEnd="@string/back_height_high_label"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="back_sensitivity_category"
+        android:persistent="false"
+        android:title="@string/back_sensitivity_dialog_title">
+
+        <com.android.settings.widget.LabeledSeekBarPreference
+            android:key="gesture_left_back_sensitivity"
+            android:title="@string/left_edge"
+            android:max="2"
+            settings:textStart="@string/low_label"
+            settings:textEnd="@string/high_label"/>
+
+        <com.android.settings.widget.LabeledSeekBarPreference
+            android:key="gesture_right_back_sensitivity"
+            android:title="@string/right_edge"
+            android:max="2"
+            settings:textStart="@string/low_label"
+            settings:textEnd="@string/high_label"/>
+
+        <com.android.settingslib.widget.FooterPreference
+            android:key="gesture_navigation_settings_footer"
+            android:title="@string/back_sensitivity_dialog_message"
+            android:selectable="false"
+            settings:searchable="false"/>
+    </PreferenceCategory>
+</PreferenceScreen>
