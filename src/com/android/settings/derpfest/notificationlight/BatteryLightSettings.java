@@ -26,6 +26,7 @@ import org.derpfest.notification.LightsCapabilities;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 
 import com.android.settings.R;
+import com.android.settings.derpfest.notificationlight.LightSettingsDialog.OnOffType;
 import com.android.settings.derpfest.preference.CustomDialogPreference;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -87,8 +88,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
         // liblights supports brightness control
         final boolean halAdjustableBrightness = LightsCapabilities.supports(context,
                 LightsCapabilities.LIGHTS_ADJUSTABLE_BATTERY_LED_BRIGHTNESS);
-        final boolean pulsatingLed = LightsCapabilities.supports(context,
-                LightsCapabilities.LIGHTS_PULSATING_LED);
+        final boolean blinkingLed = LightsCapabilities.blinks(context);
         final boolean segmentedBatteryLed = LightsCapabilities.supports(context,
                 LightsCapabilities.LIGHTS_SEGMENTED_BATTERY_LED);
 
@@ -114,7 +114,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
 
         int batteryBrightness = mBatteryBrightnessPref.getBrightnessSetting();
 
-        if (!pulsatingLed || segmentedBatteryLed) {
+        if (!blinkingLed || segmentedBatteryLed) {
             generalPrefs.removePreference(mPulseEnabledPref);
         }
 
@@ -168,19 +168,19 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
         if (mLowColorPref != null) {
             int lowColor = Settings.System.getInt(resolver,
                     DerpFestSettings.System.BATTERY_LIGHT_LOW_COLOR, mDefaultLowColor);
-            mLowColorPref.setAllValues(lowColor, 0, 0, false);
+            mLowColorPref.setAllValues(lowColor, 0, 0, OnOffType.TOGGLE);
         }
 
         if (mMediumColorPref != null) {
             int mediumColor = Settings.System.getInt(resolver,
                     DerpFestSettings.System.BATTERY_LIGHT_MEDIUM_COLOR, mDefaultMediumColor);
-            mMediumColorPref.setAllValues(mediumColor, 0, 0, false);
+            mMediumColorPref.setAllValues(mediumColor, 0, 0, OnOffType.TOGGLE);
         }
 
         if (mFullColorPref != null) {
             int fullColor = Settings.System.getInt(resolver,
                     DerpFestSettings.System.BATTERY_LIGHT_FULL_COLOR, mDefaultFullColor);
-            mFullColorPref.setAllValues(fullColor, 0, 0, false);
+            mFullColorPref.setAllValues(fullColor, 0, 0, OnOffType.TOGGLE);
             updateBrightnessPrefColor(fullColor);
         }
     }
@@ -331,7 +331,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
                 result.add(BRIGHTNESS_PREFERENCE);
                 result.add(BRIGHTNESS_ZEN_PREFERENCE);
             }
-            if (!LightsCapabilities.supports(context, LightsCapabilities.LIGHTS_PULSATING_LED) ||
+            if (!LightsCapabilities.blinks(context) ||
                     LightsCapabilities.supports(context,
                             LightsCapabilities.LIGHTS_SEGMENTED_BATTERY_LED)) {
                 result.add(PULSE_ENABLED_PREF);
