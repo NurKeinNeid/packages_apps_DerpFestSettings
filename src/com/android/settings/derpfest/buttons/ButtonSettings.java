@@ -8,7 +8,6 @@ package com.android.settings.derpfest.buttons;
 
 import static android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_2BUTTON;
 import static android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_3BUTTON;
-import static android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_GESTURAL;
 import static android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_3BUTTON_OVERLAY;
 import static android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_GESTURAL_OVERLAY;
 
@@ -105,7 +104,6 @@ public class ButtonSettings extends SettingsPreferenceFragment
     private static final String KEY_SWAP_CAPACITIVE_KEYS = "swap_capacitive_keys";
     private static final String KEY_NAV_BAR_INVERSE = "sysui_nav_bar_inverse";
     private static final String KEY_ENABLE_TASKBAR = "enable_taskbar";
-    private static final String KEY_NAVBAR_TUNER = "navbar_tuner";
 
     private static final String CATEGORY_POWER = "power_key";
     private static final String CATEGORY_HOME = "home_key";
@@ -145,7 +143,6 @@ public class ButtonSettings extends SettingsPreferenceFragment
     private SwitchPreferenceCompat mSwapCapacitiveKeys;
     private SwitchPreferenceCompat mNavBarInverse;
     private SwitchPreferenceCompat mEnableTaskbar;
-    private Preference mNavbarTuner;
 
     private PreferenceCategory mNavigationPreferencesCat;
 
@@ -478,11 +475,6 @@ public class ButtonSettings extends SettingsPreferenceFragment
             }
         }
 
-        mNavbarTuner = findPreference(KEY_NAVBAR_TUNER);
-        if (isGestureNavigationEnabled(getActivity())) {
-            extrasCategory.removePreference(mNavbarTuner);
-        }
-
         List<Integer> unsupportedValues = new ArrayList<>();
         List<String> entries = new ArrayList<>(
                 Arrays.asList(res.getStringArray(R.array.hardware_keys_action_entries)));
@@ -688,11 +680,6 @@ public class ButtonSettings extends SettingsPreferenceFragment
 
     private static boolean is3ButtonNavigationEnabled(Context context) {
         return NAV_BAR_MODE_3BUTTON == context.getResources().getInteger(
-                com.android.internal.R.integer.config_navBarInteractionMode);
-    }
-
-    private static boolean isGestureNavigationEnabled(Context context) {
-        return NAV_BAR_MODE_GESTURAL == context.getResources().getInteger(
                 com.android.internal.R.integer.config_navBarInteractionMode);
     }
 
