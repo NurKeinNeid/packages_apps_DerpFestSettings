@@ -6,7 +6,6 @@
 
 package com.android.settings.derpfest.buttons;
 
-import static android.inputmethodservice.InputMethodService.canImeRenderGesturalNavButtons;
 import static android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_2BUTTON;
 import static android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_3BUTTON;
 import static android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_GESTURAL;
@@ -480,7 +479,7 @@ public class ButtonSettings extends SettingsPreferenceFragment
         }
 
         mNavbarTuner = findPreference(KEY_NAVBAR_TUNER);
-        if (canImeRenderGesturalNavButtons() && isGestureNavigationEnabled(getActivity())) {
+        if (isGestureNavigationEnabled(getActivity())) {
             extrasCategory.removePreference(mNavbarTuner);
         }
 
@@ -765,9 +764,7 @@ public class ButtonSettings extends SettingsPreferenceFragment
                 if (DeviceUtils.isEdgeToEdgeEnabled(requireContext())) {
                     mNavigationPreferencesCat.addPreference(mEdgeLongSwipeAction);
 
-                    if (canImeRenderGesturalNavButtons()) {
-                        mNavigationPreferencesCat.removePreference(mNavigationArrowKeys);
-                    }
+                    mNavigationPreferencesCat.removePreference(mNavigationArrowKeys);
                     mNavigationPreferencesCat.removePreference(mNavigationBackLongPressAction);
                     mNavigationPreferencesCat.removePreference(mNavigationHomeLongPressAction);
                     mNavigationPreferencesCat.removePreference(mNavigationHomeDoubleTapAction);
