@@ -727,10 +727,6 @@
     <string name="battery_maximum_capacity">Maximale Kapazität</string>
     <string name="battery_maximum_capacity_summary">%1$d mAh (%2$d%%)</string>
 
-    <!-- Navbar -->
-    <string name="navbar_tuner_title">Navbar tuner</string>
-    <string name="navbar_tuner_summary">Customize your navbar layout</string>
-
     <!-- Ambient wake toggles -->
     <string name="doze_gesture_ambient_title">Ambient anzeigen</string>
     <string name="doze_gesture_ambient_summary">Inaktivitätsdisplay anzeigen, anstatt den Bildschirm voll aufzuwecken</string>
