@@ -35,7 +35,7 @@
         <TextView android:id="@+id/color_red_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:paddingTop="10dip" />
         <com.android.settings.derpfest.widget.IntervalSeekBar
             android:id="@+id/color_red_seekbar"
@@ -58,7 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/color_red_seekbar"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:paddingTop="10dip" />
         <com.android.settings.derpfest.widget.IntervalSeekBar
             android:id="@+id/color_green_seekbar"
@@ -81,7 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/color_green_seekbar"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:paddingTop="10dip" />
         <com.android.settings.derpfest.widget.IntervalSeekBar
             android:id="@+id/color_blue_seekbar"
