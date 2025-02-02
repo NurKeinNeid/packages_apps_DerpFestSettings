@@ -14,5 +14,5 @@
     <bool name="def_battery_light_full_charge_disabled">false</bool>
 
     <!-- Whether to show clear calling (P22+) -->
-    <bool name="config_clear_calling_enabled">false</bool>
+    <bool name="config_clear_calling_enabled">true</bool>
 </resources>
