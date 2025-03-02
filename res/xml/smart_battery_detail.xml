@@ -30,7 +30,7 @@
          android:title="@string/adaptive_charging"
          android:key="adaptive_charging"
          android:summary="@string/adaptive_charging_description"
-         settings:controller="com.android.settings.derpfest.fuelgauge.AdaptiveChargingPreferenceController"
+         settings:controller="com.android.settings.fuelgauge.AdaptiveChargingPreferenceController"
          settings:keywords="@string/keywords_adaptive_charging"/>
 
     <SwitchPreferenceCompat

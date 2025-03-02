@@ -7,7 +7,7 @@ import androidx.preference.Preference;
 import com.android.settings.R;
 import com.android.settings.core.TogglePreferenceController;
 
-import com.android.systemui.adaptivecharging.AdaptiveChargingManager;
+import org.derpfest.systemui.adaptivecharging.AdaptiveChargingManager;
 
 public class AdaptiveChargingPreferenceController extends TogglePreferenceController {
 
