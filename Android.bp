@@ -47,6 +47,7 @@ java_defaults {
         "framework-derpfest.impl",
     ],
     static_libs: [
+        "adaptivecharging",
         "androidx.fragment_fragment",
         "androidx.fragment_fragment-ktx",
         "androidx.preference_preference-ktx",
