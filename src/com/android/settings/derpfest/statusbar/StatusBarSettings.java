@@ -91,28 +91,29 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             mStatusBarAmPm.setSummary(R.string.status_bar_am_pm_info);
         }
 
-        final boolean disallowCenteredClock = mHasCenteredCutout;
+        final boolean isRTL = getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL;
 
-        // Adjust status bar preferences for RTL
-        if (getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
-            if (disallowCenteredClock) {
-                mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch_rtl);
-                mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch);
-            } else {
-                mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_rtl);
-                mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values);
-            }
-            mQuickPulldown.setEntries(R.array.status_bar_quick_qs_pulldown_entries_rtl);
-        } else {
-            if (disallowCenteredClock) {
-                mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch);
-                mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch);
-            } else {
-                mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries);
-                mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values);
-            }
-            mQuickPulldown.setEntries(R.array.status_bar_quick_qs_pulldown_entries);
-        }
+        mStatusBarClock.setEntries(
+            isRTL
+                ? mHasCenteredCutout
+                    ? R.array.status_bar_clock_position_entries_notch_rtl
+                    : R.array.status_bar_clock_position_entries_rtl
+                : mHasCenteredCutout
+                    ? R.array.status_bar_clock_position_entries_notch
+                    : R.array.status_bar_clock_position_entries
+        );
+
+        mStatusBarClock.setEntryValues(
+            mHasCenteredCutout
+                ? R.array.status_bar_clock_position_values_notch
+                : R.array.status_bar_clock_position_values
+        );
+
+        mQuickPulldown.setEntries(
+            isRTL
+                ? R.array.status_bar_quick_qs_pulldown_entries_rtl
+                : R.array.status_bar_quick_qs_pulldown_entries
+        );
     }
 
     @Override
@@ -148,25 +149,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment
                 break;
         }
         mQuickPulldown.setSummary(summary);
-    }
-
-    private void updateNetworkTrafficStatus(int clockPosition) {
-        boolean isClockCentered = clockPosition == 1;
-        mNetworkTrafficPref.setEnabled(!isClockCentered);
-        mNetworkTrafficPref.setSummary(getResources().getString(isClockCentered ?
-                R.string.network_traffic_disabled_clock :
-                R.string.network_traffic_settings_summary
-        ));
-    }
-
-    private int getNetworkTrafficStatus() {
-        return Settings.Secure.getInt(getActivity().getContentResolver(),
-                Settings.Secure.NETWORK_TRAFFIC_MODE, 0);
-    }
-
-    private int getClockPosition() {
-        return Settings.System.getInt(getActivity().getContentResolver(),
-                STATUS_BAR_CLOCK_STYLE, 2);
     }
 
     @Override
