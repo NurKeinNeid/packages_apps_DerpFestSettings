@@ -91,7 +91,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             mStatusBarAmPm.setSummary(R.string.status_bar_am_pm_info);
         }
 
-        final boolean disallowCenteredClock = mHasCenteredCutout || getNetworkTrafficStatus() != 0;
+        final boolean disallowCenteredClock = mHasCenteredCutout;
 
         // Adjust status bar preferences for RTL
         if (getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
@@ -113,9 +113,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             }
             mQuickPulldown.setEntries(R.array.status_bar_quick_qs_pulldown_entries);
         }
-
-        // Disable network traffic preferences if clock is centered in the status bar
-        updateNetworkTrafficStatus(getClockPosition());
     }
 
     @Override
@@ -125,9 +122,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         switch (key) {
             case STATUS_BAR_QUICK_QS_PULLDOWN:
                 updateQuickPulldownSummary(value);
-                break;
-            case STATUS_BAR_CLOCK_STYLE:
-                updateNetworkTrafficStatus(value);
                 break;
         }
         return true;
